@@ -1,0 +1,12 @@
+console.log("\nProgram has been run correctly.\n");
+console.log("CSoft - Gloriam nostram ");
+console.log("                   ");
+console.log("    |`-._/\\_.-`|");
+console.log("    |    ||    |");
+console.log("    |___o()o___|");
+console.log("    |__((<>))__|");
+console.log("    \\   o{}o   /");
+console.log("     \\   ||   /");
+console.log("      \\  ||  /");
+console.log("  jgs  '.||.'");
+console.log("         ``");

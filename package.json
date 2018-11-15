@@ -1,0 +1,23 @@
+{
+  "name": "interviewalgorithms",
+  "version": "1.0.0",
+  "description": "Interview algorithms",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caballerof/codingInterviewAlgorithms.git"
+  },
+  "keywords": [
+    "algorithms"
+  ],
+  "author": "Reivaj Caballero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caballerof/codingInterviewAlgorithms/issues"
+  },
+  "homepage": "https://github.com/caballerof/codingInterviewAlgorithms#readme"
+}
