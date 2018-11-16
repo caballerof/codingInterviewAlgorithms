@@ -8,9 +8,11 @@
  * reverseString(`Greetings!`)  --> !sgniteerG
  */
 
+//console.log(reverseString(`Hola`));
 /**
  * Given a string, return a new string with the reversed using Array and String methods.
  * @param {String} stringToReverse This value will be reversed.
+ * @returns {String} Reversed string.
  */
 function reverseString(stringToReverse) {
   return stringToReverse
@@ -22,18 +24,20 @@ function reverseString(stringToReverse) {
 /**
  * Given a string, return a new string with the reversed using {For of} loop".
  * @param {String} stringToReverse This value will be reversed.
+ * @returns {String} Reversed string.
  */
-function reverseStringWithFor(stringToReverse) {
+function reverseStringWithLoop(stringToReverse) {
   let revStr = "";
   for (let v of strToReverse) {
     revStr = v + revStr;
   }
   return revStr;
-} //End reverseStringWithFor
+} //End reverseStringWithLoop
 
 /**
  * Given a string, return a new string with the reversed using {For of} loop".
  * @param {String} stringToReverse This value will be reversed.
+ * @returns {String} Reversed string.
  */
 function reverseStringWithReduce(stringToReverse) {
   return strToReverse
@@ -46,6 +50,6 @@ function reverseStringWithReduce(stringToReverse) {
 
 module.exports = {
   reverseString,
-  reverseStringWithFor,
+  reverseStringWithLoop,
   reverseStringWithReduce
 };
