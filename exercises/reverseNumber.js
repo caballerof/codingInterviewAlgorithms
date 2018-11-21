@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const reverseString = require('./reverseString');
+const reverseString = require("./reverseString");
 
 /**
  * @author Reivaj Caballero
@@ -8,19 +8,39 @@ const reverseString = require('./reverseString');
  *
  */
 
-console.log(reverseInteger(-90));
+console.log(reverseIntegerMathSign(-45));
 
 /**
- * Reverse a given integer 
+ * Reverse a given integer
  * @param {number} number Integer value to reverse.
- * @returns `number` Return a reversed integer, if the parameter is not a integer it going to return 0.
+ * @returns `null` If the parameter is not a integer it going to return `null`.
  */
 function reverseInteger(number) {
-    if (Number.isInteger(number)) {
-        let numberToString = reverseString.reverseString(number.toString());
-        let integerReversed = parseInt(reverseString.reverseString(number.toString()));
-        return numberToString.includes(`-`) ? integerReversed * -1 : integerReversed;
-    } else {
-        return 0;
-    }
-}//End reverseInteger
+  if (Number.isInteger(number)) {
+    let numberToString = reverseString.reverseString(number.toString());
+    let integerReversed = parseInt(
+      reverseString.reverseString(number.toString())
+    );
+    return numberToString.includes(`-`)
+      ? integerReversed * -1
+      : integerReversed;
+  } else {
+    return null;
+  }
+} //End reverseInteger
+
+/**
+ * Reverse a given integer with Math.sign().
+ * @param {Number} number Integer value to reverse.
+ * @returns `null` If the parameter is not a integer it going to return `null`.
+ */
+function reverseIntegerMathSign(number) {
+  if (Number.isInteger(number)) {
+    return (
+      parseInt(reverseString.reverseString(number.toString())) *
+      Math.sign(number)
+    );
+  } else {
+    return null;
+  }
+} //End reverseIntegerMathSign
