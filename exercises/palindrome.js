@@ -4,8 +4,7 @@ const reverseString = require("./reverseString");
 
 /**
  * @author Reivaj Caballero
- * @description Directions
- * Given a string or phrase, return true if the string is a palindrome
+ * @description Given a string or phrase, return true if the string is a palindrome
  * or false if it is not.  Palindromes are strings that
  * form the same word if it is reversed. *Do* include spaces
  * and punctuation in determining if the string is a palindrome.
