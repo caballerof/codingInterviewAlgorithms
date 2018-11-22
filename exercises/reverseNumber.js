@@ -44,3 +44,8 @@ function reverseIntegerMathSign(number) {
     return null;
   }
 } //End reverseIntegerMathSign
+
+module.exports = {
+  reverseInteger,
+  reverseIntegerMathSign
+};
