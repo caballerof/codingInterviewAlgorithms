@@ -8,10 +8,10 @@ const reverseString = require("./reverseString");
  * or false if it is not.  Palindromes are strings that
  * form the same word if it is reversed. *Do* include spaces
  * and punctuation in determining if the string is a palindrome.
- * --- Examples:
- *   palindrome(`anita lava la tina`)   --> true
- *   palindrome(`oso`)                  --> true
- *   palindrome(`abcdefg`)              --> false
+ *
+ * palindrome(`anita lava la tina`)   --> true
+ * palindrome(`oso`)                  --> true
+ * palindrome(`abcdefg`)              --> false
  */
 
 //console.log(isPalindromeWithEvery(`anita lava la tina`));
