@@ -14,7 +14,7 @@
 //console.log(splitArray([1, 2, 3, 4, 5, 6, 7, 8], 6));
 
 /**
- *
+ * Given an array and a size, return a `Array` in which every element from the array is a sub-array with length = size.
  * @param {Array} originalArray Array to split.
  * @param {Number} size Number of element to split the array.
  */
@@ -36,7 +36,7 @@ function splitArray(originalArray, size) {
 } //End splitArray
 
 /**
- *
+ * Given an array and a size, return a `Array` in which every element from the array is a sub-array with length = size.
  * @param {Array} array originalArray Array to split.
  * @param {Number} size size Number of element to split the array.
  */
