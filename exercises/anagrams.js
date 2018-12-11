@@ -14,13 +14,13 @@
  */
 
 //console.log(anagrams(` nag a ram`, `anagram`));
-//console.log(anagramWithoutLoops(` nag a ram`, `anagram`));
+console.log(anagramWithoutLoops(` nag a ram`, `anagram`));
 
 /**
- *
+ * Compare two given string and returns if them are an anagram or not.
  * @param {string} string1 First String to compare with the second string.
  * @param {string} string2 Second string to compare with the first string.
- * @returns {boolean}
+ * @returns {boolean} Returns true if it is a anagram, returns false  in other case.
  */
 function anagrams(string1, string2) {
   const firstString = string1
@@ -54,9 +54,10 @@ function anagrams(string1, string2) {
 } // End anagrams
 
 /**
- *
+ * Compare two given string and returns if them are an anagram or not.
  * @param {string} stringA First String to compare with the second string.
  * @param {string} stringB Second string to compare with the first string.
+ * @returns {boolean} Returns true if it is a anagram, returns false  in other case.
  */
 function anagramWithoutLoops(stringA, stringB) {
   return cleanString(stringA) === cleanString(stringB);
