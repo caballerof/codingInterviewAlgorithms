@@ -2,7 +2,7 @@
 
 /**
  * @author Reivaj Caballero
- * @description With N level using the # character. Make sure the
+ * @description Make a stair with N level using the # character. Make sure the
  * step has spaces on the right hand side!.
  *
  * steps (2)
@@ -41,7 +41,7 @@ function steps(stepsNumber) {
  * @param {number} [row=0] Current row in the stair's level.
  * @param {string} [stair=''] Represent the string (level) to print in the current level.
  */
-function stepsRecursion(number, increment = 1, row = 0, stair = ``) {
+function stepsRecursive(number, increment = 1, row = 0, stair = ``) {
   if (number === row) {
     return;
   }
@@ -59,5 +59,5 @@ function stepsRecursion(number, increment = 1, row = 0, stair = ``) {
 
 module.exports = {
   step,
-  stepsRecursion
+  stepsRecursive
 };
