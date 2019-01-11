@@ -13,8 +13,8 @@
  *
  */
 
-//console.log(anagrams(` nag a ram`, `anagram`));
-console.log(anagramWithoutLoops(` nag a ram`, `anagram`));
+console.log(anagrams(` nag a ram sdasdsadasd`, `anagram`));
+// console.log(anagramWithoutLoops(` nag a ram`, `anagram`));
 
 /**
  * Compare two given string and returns if them are an anagram or not.
@@ -42,10 +42,9 @@ function anagrams(string1, string2) {
       characterMapSecond[secondString[x]] =
         characterMapSecond[secondString[x]] + 1 || 1;
     }
-    for (let x = 0; x < firstString.length; x++) {
-      if (
-        characterMapFirst[firstString[x]] !== characterMapSecond[firstString[x]]
-      ) {
+    const letters = Object.keys(characterMapFirst);
+    for (let letter of letters) {
+      if (characterMapFirst[letter] !== characterMapSecond[letter]) {
         return false;
       }
     }

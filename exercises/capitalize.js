@@ -14,8 +14,8 @@
 console.log(capitalize(`a short sentence`));
 
 /**
- *
- * @param {string} str
+ * Given a string capitalize the first letter of every word.
+ * @param {string} str String given to capitalize.
  */
 function capitalize(str) {
   let strArray;
