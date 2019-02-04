@@ -1,7 +1,7 @@
 'use strict';
 /**
  * @author Reivaj Caballero
- * @description Write a function that accepts an intenger N
+ * @description Write a function that accepts an integer N
  * and returns a NxN spiral matrix.
  *
  * matrix(2)
