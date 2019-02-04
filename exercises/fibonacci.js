@@ -1,9 +1,14 @@
-//console.log(fibonacci(100));
-//console.log(fibonacciRec(10));
+/**
+ *
+ */
+const fibonacciMemoize = cacheFibonacciRec(fibonacciRecCache);
+
+console.log(fibonacci(2));
+console.log(fibonacciMemoize(2));
 
 /**
  *
- * @param {*} number
+ * @param {Number} number
  */
 function fibonacci(number) {
   const fiboSeries = [0, 1];
@@ -15,7 +20,34 @@ function fibonacci(number) {
 
 /**
  *
- * @param {*} number
+ * @param {Function} fn
+ */
+function cacheFibonacciRec(fn) {
+  const cache = {};
+  return function(...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+    const result = fn.apply(this, args);
+    cache[args] = result;
+    return result;
+  };
+} // End cacheFibonacciRec
+
+/**
+ *
+ * @param {Number} number
+ */
+function fibonacciRecCache(number) {
+  if (number < 2) {
+    return number;
+  }
+  return fibonacciMemoize(number - 1) + fibonacciMemoize(number - 2);
+} // End fibonacciRecCache
+
+/**
+ *
+ * @param {Number} number
  */
 function fibonacciRec(number) {
   if (number < 2) {
@@ -25,6 +57,7 @@ function fibonacciRec(number) {
 } // End fibonacciRec
 
 module.exports = {
-  fibonacciRec,
-  fibonacci
+  fibonacci,
+  fibonacciMemoize,
+  fibonacciRec
 };
