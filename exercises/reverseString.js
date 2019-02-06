@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /**
  * @author Reivaj Caballero
  * @description Given a string, return a new string with the reversed
@@ -8,7 +8,7 @@
  * reverseString(`Greetings!`)  --> !sgniteerG
  */
 
-//console.log(reverseString(`Hola`));
+console.log(reverseString(`ab.c$dfg`));
 /**
  * Given a string, return a new string with the reversed using Array and String methods.
  * @param {String} stringToReverse This value will be reversed.
@@ -16,7 +16,7 @@
  */
 function reverseString(stringToReverse) {
   return stringToReverse
-    .split("")
+    .split('')
     .reverse()
     .join(``);
 } //End reverseString
@@ -27,8 +27,8 @@ function reverseString(stringToReverse) {
  * @returns {String} Reversed string.
  */
 function reverseStringWithLoop(stringToReverse) {
-  let revStr = "";
-  for (let v of strToReverse) {
+  let revStr = '';
+  for (let v of stringToReverse) {
     revStr = v + revStr;
   }
   return revStr;
@@ -40,7 +40,7 @@ function reverseStringWithLoop(stringToReverse) {
  * @returns {String} Reversed string.
  */
 function reverseStringWithReduce(stringToReverse) {
-  return strToReverse
+  return stringToReverse
     .split(``)
     .reduce(
       (strReversed, currentCharacter) => currentCharacter + strReversed,
