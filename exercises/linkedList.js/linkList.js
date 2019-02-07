@@ -49,6 +49,30 @@ class LinkedList {
     }
     return node;
   }
+
+  clear() {
+    this.head = null;
+  }
+
+  removeFirst() {
+    if (this.head) {
+      this.head.next = this.head;
+    }
+  }
+
+  removeLast() {
+    let previous = this.head;
+    let current = this.head;
+    if (!current || !current.next) {
+      this.head = null;
+      return;
+    }
+    while (current.next) {
+      previous = current;
+      current = current.next;
+    }
+    previous.next = null;
+  }
 } // End class
 
 var lista = new LinkedList();

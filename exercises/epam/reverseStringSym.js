@@ -8,6 +8,10 @@
  * str = 'ab,c$f#' => 'c,b$a#'
  */
 
+/**
+ *
+ * @param {String} str String to reverse
+ */
 function reverseStr(str) {
   const strArray = str.split('');
   const stackLet = [];
