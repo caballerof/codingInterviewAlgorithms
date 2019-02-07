@@ -8,8 +8,28 @@
  * str = 'ab,c$f#' => 'c,b$a#'
  */
 
+function reverseStrNoExtraSpace(strArray) {
+  let pointerLeft = 0;
+  let pointerRight = strArray.length - 1;
+  let isItLetter = /^[A-Za-z]+$/;
+  while (pointerLeft < pointerRight) {
+    if (!isItLetter.test(strArray[pointerLeft])) {
+      pointerLeft++;
+    } else if (!isItLetter.test(strArray[pointerRight])) {
+      pointerRight--;
+    } else {
+      let temp = strArray[pointerLeft];
+      strArray[pointerLeft] = strArray[pointerRight];
+      strArray[pointerRight] = temp;
+      pointerLeft++;
+      pointerRight--;
+    }
+  }
+  return strArray;
+}
+
 /**
- *
+ * Complexity (2n) => (n), but this solution need extra space.
  * @param {String} str String to reverse
  */
 function reverseStr(str) {
@@ -31,6 +51,6 @@ function reverseStr(str) {
   return stackLet.join('');
 } // End reverseStr
 
-console.log(reverseStr('ab,c$f#'));
+console.log(reverseStrNoExtraSpace('ab,c$f#'));
 
-module.exports = { reverseStr };
+module.exports = { reverseStr, reverseStrNoExtraSpace };
