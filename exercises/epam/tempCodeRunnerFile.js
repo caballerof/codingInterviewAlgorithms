@@ -1,1 +1,1 @@
-reverseStrNoExtraSpace
+getLetter

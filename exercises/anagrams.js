@@ -13,8 +13,8 @@
  *
  */
 
-console.log(anagrams(` nag a ram sdasdsadasd`, `anagram`));
-// console.log(anagramWithoutLoops(` nag a ram`, `anagram`));
+// console.log(anagrams(` nag a ram sdasdsadasd`, `anagram`));
+console.log(anagramWithoutLoops(` nag a ram!`, `anagram!`));
 
 /**
  * Compare two given string and returns if them are an anagram or not.
@@ -53,7 +53,7 @@ function anagrams(string1, string2) {
 } // End anagrams
 
 /**
- * Compare two given string and returns if them are an anagram or not.
+ * Compare two given strings and returns if them are an anagram or not.
  * @param {string} stringA First String to compare with the second string.
  * @param {string} stringB Second string to compare with the first string.
  * @returns {boolean} Returns true if it is a anagram, returns false  in other case.
@@ -69,7 +69,7 @@ function anagramWithoutLoops(stringA, stringB) {
  */
 function cleanString(str) {
   return str
-    .replace(/[^\w]/g, '')
+    .replace(/[\W]/g, '')
     .toLowerCase()
     .split(``)
     .sort()
