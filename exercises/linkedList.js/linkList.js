@@ -50,6 +50,22 @@ class LinkedList {
     return node;
   }
 
+  getAt(index) {
+    let node = this.head;
+    let count = 0;
+    if (index <= 0) {
+      return node;
+    }
+    while (node && node.next) {
+      node = node.next;
+      count++;
+      if (count === index) {
+        return node;
+      }
+    }
+    return null;
+  }
+
   clear() {
     this.head = null;
   }
@@ -74,6 +90,10 @@ class LinkedList {
     previous.next = null;
   }
 
+  removeAt(index) {
+    
+  }
+
   insertLast(data) {
     let lastNode = this.getLast();
     if (lastNode) {
@@ -86,12 +106,11 @@ class LinkedList {
 
 var lista = new LinkedList();
 
-// lista.insertFirst(1);
-// lista.insertFirst(2);
-// lista.insertFirst(3);
-// lista.insertFirst(4);
-//console.log(lista.size());
-//console.log(lista.getFirst());
-console.log(lista.getLast());
+lista.insertFirst(1);
+lista.insertFirst(2);
+lista.insertFirst(3);
+lista.insertFirst(4);
+console.log(lista.size());
+console.log(lista.getAt(4));
 
 module.exports = { Node, LinkedList };
