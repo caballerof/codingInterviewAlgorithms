@@ -88,11 +88,42 @@ class LinkedList {
       current = current.next;
     }
     previous.next = null;
-  }
+  } // End removeLast
 
   removeAt(index) {
-    
-  }
+    let node = this.head;
+    let previousNode = this.head;
+    let count = 1;
+    if (!node || index < 0) {
+      return null;
+    }
+    if (0 === index) {
+      if (!node.next) {
+        this.head = null;
+        return node;
+      } else {
+        this.head = this.head.next;
+        return node;
+      }
+    } else if (!node.next && index > 0) {
+      return null;
+    }
+    node = node.next;
+    do {
+      if (index === count) {
+        previousNode.next = node.next;
+        return node;
+      }
+      previousNode = node;
+      node = node.next;
+      count++;
+    } while (node.next);
+    if (!node.next && index === count) {
+      previousNode.next = null;
+      return node;
+    }
+    return null;
+  } // End removeAt
 
   insertLast(data) {
     let lastNode = this.getLast();
@@ -106,11 +137,10 @@ class LinkedList {
 
 var lista = new LinkedList();
 
-lista.insertFirst(1);
-lista.insertFirst(2);
-lista.insertFirst(3);
-lista.insertFirst(4);
+//lista.insertFirst(3);
+//lista.insertFirst(2);
+//lista.insertFirst(1);
 console.log(lista.size());
-console.log(lista.getAt(4));
-
+console.log(lista.removeAt(-1));
+console.log(lista);
 module.exports = { Node, LinkedList };
