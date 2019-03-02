@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * @author Reivaj Caballero
@@ -11,7 +11,7 @@
  *split([1, 2, 3, 4, 5, 6, 7, 8], 6)  --> [ [ 1, 2, 3, 4, 5, 6 ], [ 7, 8 ] ]
  */
 
-//console.log(splitArray([1, 2, 3, 4, 5, 6, 7, 8], 6));
+console.log(splitArray([1, 2, 3, 4, 5, 6, 7, 8], 10));
 
 /**
  * Given an array and a size, return a `Array` in which every element from the array is a sub-array with length = size.

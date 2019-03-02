@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const reverseString = require("./reverseString");
+const reverseString = require('./reverseString');
 
 /**
  * @author Reivaj Caballero
