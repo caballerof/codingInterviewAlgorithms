@@ -125,6 +125,32 @@ class LinkedList {
     return null;
   } // End removeAt
 
+  insertAt(data, index) {
+    const newNode = new Node(data);
+    const node = this.head;
+    let count = 1;
+    if (!node) {
+      this.head = newNode;
+      return newNode;
+    } else if (index <= 0) {
+      newNode.next = this.head;
+      this.head = newNode;
+      return newNode;
+    }
+    while (node.next) {
+      if (count === index) {
+        let bucketNode = node.next;
+        node.next = newNode;
+        newNode.next = bucketNode;
+        return newNode;
+      }
+      node = node.next;
+      -count++;
+    }
+    node.next = newNode;
+    return newNode;
+  } // End insertAt
+
   insertLast(data) {
     let lastNode = this.getLast();
     if (lastNode) {
