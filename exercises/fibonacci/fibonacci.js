@@ -3,8 +3,8 @@
  */
 const fibonacciMemoize = cacheFibonacciRec(fibonacciRecCache);
 
-console.log(fibonacci(2));
-console.log(fibonacciMemoize(2));
+// console.log(fibonacci(2));
+// console.log(fibonacciMemoize(2));
 
 /**
  *
