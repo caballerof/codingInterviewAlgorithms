@@ -145,7 +145,7 @@ class LinkedList {
         return newNode;
       }
       node = node.next;
-      -count++;
+      count++;
     }
     node.next = newNode;
     return newNode;
@@ -158,7 +158,7 @@ class LinkedList {
     } else {
       this.head = new Node(data);
     }
-  }
+  } // insertLast
 } // End class
 
 var lista = new LinkedList();
