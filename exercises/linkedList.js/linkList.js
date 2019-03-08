@@ -158,7 +158,17 @@ class LinkedList {
     } else {
       this.head = new Node(data);
     }
-  } // insertLast
+  } // End insertLast
+
+  forEach(fn) {
+    let node = this.head;
+    let counter = 0;
+    while (node) {
+      fn(node, counter);
+      node = node.next;
+      counter++;
+    }
+  } // End forEach
 } // End class
 
 var lista = new LinkedList();
