@@ -151,6 +151,10 @@ class LinkedList {
     return newNode;
   } // End insertAt
 
+  /**
+   * Insert a new Node at the final part of the list
+   * @param {any} data Value to insert create the Node.
+   */
   insertLast(data) {
     let lastNode = this.getLast();
     if (lastNode) {
@@ -169,6 +173,14 @@ class LinkedList {
       counter++;
     }
   } // End forEach
+
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
+    }
+  }
 } // End class
 
 var lista = new LinkedList();
@@ -176,7 +188,5 @@ var lista = new LinkedList();
 //lista.insertFirst(3);
 //lista.insertFirst(2);
 //lista.insertFirst(1);
-console.log(lista.size());
-console.log(lista.removeAt(-1));
-console.log(lista);
+
 module.exports = { Node, LinkedList };
