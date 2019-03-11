@@ -21,6 +21,7 @@ function reverseStrNoExtraSpace(str) {
   let pointerRight = strArray.length - 1;
   const isItLetter = /[A-Za-z]/;
   while (pointerLeft < pointerRight) {
+    //TODO: We can ask for both left and right pointer at the same time
     if (!isItLetter.test(strArray[pointerLeft])) {
       pointerLeft++;
     } else if (!isItLetter.test(strArray[pointerRight])) {
@@ -37,7 +38,7 @@ function reverseStrNoExtraSpace(str) {
 }
 
 /**
- * Complexity (n)
+ * Complexity O(n)
  * @param {String} str String to reverse.
  */
 function reverseStrOther(str) {
@@ -53,7 +54,7 @@ function reverseStrOther(str) {
 } // End reverseStrOther
 
 /**
- * Complexity (2n) => (n), but this solution need extra space.
+ * Complexity O(2n) => O(n), but this solution need extra space.
  * @param {String} str String to reverse.
  */
 function reverseStr(str) {
