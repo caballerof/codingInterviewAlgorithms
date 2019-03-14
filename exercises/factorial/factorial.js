@@ -41,16 +41,17 @@ function memoizationFactorial(fn) {
   };
 }
 
-function factorialRecursiveCahe(number) {
+function factorialRecursiveCache(number) {
   if (0 === number) {
     return 1;
   }
   return number * factorialMemo1(number - 1);
 }
 
-var factorialMemo1 = memoizationFactorial(factorialRecursiveCahe);
+var factorialMemo1 = memoizationFactorial(factorialRecursiveCache);
 
 module.exports = {
   factorialRecursive,
-  factorialInteractive
+  factorialInteractive,
+  factorialRecursiveCache
 };
