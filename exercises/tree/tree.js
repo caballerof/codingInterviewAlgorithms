@@ -46,28 +46,28 @@ class Tree {
     while (queue.length > 0) {
       let node = queue.shift();
       listNodes.push(node.data);
-      for (const n of node.children) {
-        queue.push(n);
+      for (const child of node.children) {
+        queue.push(child);
       }
     }
     return listNodes;
   }
 
+  /**
+   * Apply a function for each node in the tree.
+   * @param {Function} fn Callback function to apply for each node in the tree.
+   */
+  bfsApplyFn(fn) {
+    const queue = [this.root];
+    while (queue.length > 0) {
+      const node = queue.shift();
+      queue.push(...node.children);
+      fn(node);
+    }
+  } // End bfsApplyFn
+
   depthFirstSearch() {}
 } // End class Tree
-
-const tree = new Tree();
-const node = new Node('20');
-tree.root = node;
-node.add(0);
-node.add(40);
-node.add(-15);
-node.children[0].add(12);
-node.children[0].add(-2);
-node.children[0].add(1);
-node.children[2].add(-2);
-
-console.log(tree.breadthFirstSearch());
 
 module.exports = {
   Node,

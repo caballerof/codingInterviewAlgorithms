@@ -32,4 +32,35 @@ describe('Tree tests', () => {
     const t = new Tree();
     expect(t.root).toEqual(null);
   });
+
+  test('Can traverse BF', () => {
+    const nodes = [];
+    const tree = new Tree();
+    const node = new Node('20');
+    tree.root = node;
+    node.add(0);
+    node.add(40);
+    node.add(-15);
+    node.children[0].add(12);
+    node.children[0].add(-2);
+    node.children[0].add(1);
+    node.children[2].add(-2);
+    nodes.push(...tree.breadthFirstSearch());
+    expect(nodes).toEqual(['20', 0, 40, -15, 12, -2, 1, -2]);
+  });
+
+  test('Can traverse BF applying a function for each node', () => {
+    const letters = [];
+    const t = new Tree();
+    t.root = new Node('a');
+    t.root.add('b');
+    t.root.add('c');
+    t.root.children[0].add('d');
+
+    t.bfsApplyFn(node => {
+      letters.push(node.data);
+    });
+
+    expect(letters).toEqual(['a', 'b', 'c', 'd']);
+  });
 });
