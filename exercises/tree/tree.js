@@ -66,7 +66,25 @@ class Tree {
     }
   } // End bfsApplyFn
 
-  depthFirstSearch() {}
+  depthFirstSearch() {
+    const stack = [this.root];
+    const nodes = [];
+    while (stack.length > 0) {
+      const node = stack.shift();
+      nodes.push(node.data);
+      stack.unshift(...node.children);
+    }
+    return nodes;
+  }
+
+  depthFSApplyFn(fn) {
+    const stack = [this.root];
+    while (stack.length > 0) {
+      const node = stack.shift();
+      stack.unshift(...node.children);
+      fn(node);
+    }
+  }
 } // End class Tree
 
 module.exports = {

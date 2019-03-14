@@ -50,7 +50,7 @@ describe('Tree tests', () => {
   });
 
   test('Can traverse BF applying a function for each node', () => {
-    const letters = [];
+    const nodes = [];
     const t = new Tree();
     t.root = new Node('a');
     t.root.add('b');
@@ -58,9 +58,45 @@ describe('Tree tests', () => {
     t.root.children[0].add('d');
 
     t.bfsApplyFn(node => {
-      letters.push(node.data);
+      nodes.push(node.data);
     });
 
-    expect(letters).toEqual(['a', 'b', 'c', 'd']);
+    expect(nodes).toEqual(['a', 'b', 'c', 'd']);
+  });
+
+  test('Can traverse DF', () => {
+    let nodes = [];
+    const tree = new Tree();
+    const node = new Node('20');
+    tree.root = node;
+    node.add(0);
+    node.add(40);
+    node.add(-15);
+    node.children[0].add(12);
+    node.children[0].add(-2);
+    node.children[0].add(1);
+    node.children[2].add(-2);
+    nodes = tree.depthFirstSearch();
+    expect(nodes).toEqual(['20', 0, 12, -2, 1, 40, -15, -2]);
+  });
+
+  test('Can traverse DF applying a function for each node', () => {
+    let nodes = [];
+    const tree = new Tree();
+    const node = new Node('20');
+    tree.root = node;
+    node.add(0);
+    node.add(40);
+    node.add(-15);
+    node.children[0].add(12);
+    node.children[0].add(-2);
+    node.children[0].add(1);
+    node.children[2].add(-2);
+
+    tree.depthFSApplyFn(node => {
+      nodes.push(node.data);
+    });
+
+    expect(nodes).toEqual(['20', 0, 12, -2, 1, 40, -15, -2]);
   });
 });
