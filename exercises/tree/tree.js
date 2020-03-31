@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
  * 1) Create a node class.  The constructor
@@ -40,6 +40,10 @@ class Tree {
     this.root = null;
   }
 
+  /**
+   * Retrieve a listNodes making a BFS.
+   * @return {Array} Nodes list.
+   */
   breadthFirstSearch() {
     let listNodes = [];
     let queue = [this.root];
@@ -54,7 +58,7 @@ class Tree {
   }
 
   /**
-   * Apply a function for each node in the tree.
+   * Apply a function for each node in the tree using BFS.
    * @param {Function} fn Callback function to apply for each node in the tree.
    */
   bfsApplyFn(fn) {
@@ -66,6 +70,10 @@ class Tree {
     }
   } // End bfsApplyFn
 
+  /**
+   * Retrieve a listNodes making a DFS.
+   * @return {Array} Nodes list.
+   */
   depthFirstSearch() {
     const stack = [this.root];
     const nodes = [];
@@ -77,6 +85,10 @@ class Tree {
     return nodes;
   }
 
+  /**
+   * Apply a function for each node in the tree using DFS.
+   * @param {Function} fn Callback function to apply for each node in the tree.
+   */
   depthFSApplyFn(fn) {
     const stack = [this.root];
     while (stack.length > 0) {

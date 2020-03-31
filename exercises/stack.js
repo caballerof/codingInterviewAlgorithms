@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 /**
  *
  * @description Create a stack data structure.  The stack
@@ -14,20 +14,38 @@
  */
 
 class Stack {
+  /**
+   * Instance a empty stack
+   */
   constructor() {
     this.data = [];
   }
 
+  /**
+   * Insert a new element to the stack.
+   * @param {Any} element to insert into stack.
+   */
   push(element) {
     this.data.push(element);
   }
 
+  /**
+   * Remove top element from the stack.
+   */
   pop() {
     return this.data.pop();
   }
 
+  /**
+   * Retrieve top element from the stack.
+   * It does not remove the element.
+   */
   peek() {
     return this.data[this.data.length - 1];
+  }
+
+  size() {
+    return this.data.length;
   }
 } // End Class
 
