@@ -4,15 +4,28 @@ test("Node is a constructor", () => {
   expect(typeof Node.prototype.constructor).toEqual("function");
 });
 
-test("Node can insert correctly", () => {
-  const node = new Node(10);
-  node.insert(5);
-  node.insert(15);
-  node.insert(17);
+describe('Insert new node correctly', () => {
+  test('Insert recursively', () => {
+    const node = new Node(10);
+    node.insertRecursive(5);
+    node.insertRecursive(15);
+    node.insertRecursive(17);
 
-  expect(node.left.data).toEqual(5);
-  expect(node.right.data).toEqual(15);
-  expect(node.right.right.data).toEqual(17);
+    expect(node.left.data).toEqual(5);
+    expect(node.right.data).toEqual(15);
+    expect(node.right.right.data).toEqual(17);
+  });
+
+  test("Node can insert correctly", () => {
+    const node = new Node(10);
+    node.insert(5);
+    node.insert(15);
+    node.insert(17);
+
+    expect(node.left.data).toEqual(5);
+    expect(node.right.data).toEqual(15);
+    expect(node.right.right.data).toEqual(17);
+  });
 });
 
 test("Contains returns node with the same data", () => {
@@ -24,8 +37,10 @@ test("Contains returns node with the same data", () => {
   node.insert(-5);
   node.insert(3);
 
+  // doble check for correct structure
   const three = node.left.left.right;
-  expect(node.contains(3)).toEqual(three);
+
+  expect(node.contains(3)).toEqual(3);
 });
 
 test("Contains returns null if value not found", () => {

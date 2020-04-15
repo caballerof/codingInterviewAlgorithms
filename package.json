@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/caballerof/codingInterviewAlgorithms/issues"
   },
-  "homepage": "https://github.com/caballerof/codingInterviewAlgorithms#readme"
+  "homepage": "https://github.com/caballerof/codingInterviewAlgorithms#readme",
+  "dependencies": {
+    "jest": "^25.3.0"
+  }
 }
