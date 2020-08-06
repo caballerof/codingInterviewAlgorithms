@@ -11,7 +11,7 @@ function repeatedString(s, n) {
       arrayA = s.match(/a/g);
       if (arrayA) {
         amountA = arrayA.length;
-        repeatedStr = Math.floor(n / s.length);      
+        repeatedStr = Math.floor(n / s.length);
         remainStr = s.slice(0,n % s.length);
       } else {
         return 0;
