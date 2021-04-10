@@ -1,4 +1,4 @@
-const { LinkedList } = require('../linkedList/linkList');
+const { LinkedList } = require('../data_structure/linkedList/linkList');
 
 function midPoint(list) {
   let slow = list.getFirst();
