@@ -1,4 +1,4 @@
-const { Node } = require('../tree/tree');
+const { Node } = require('../data_structure/tree/tree');
 
 /**
  *
@@ -33,5 +33,5 @@ function levelWidthTree(root) {
 }
 
 module.exports = {
-  levelWidthTree
+  levelWidthTree,
 };

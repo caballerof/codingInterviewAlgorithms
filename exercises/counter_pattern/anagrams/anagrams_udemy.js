@@ -14,19 +14,21 @@ function isAnagram(str1, str2) {
   const str2Array = str2.split('');
 
   for (let x = 0; x < str1Array.length; x++) {
-    if (str1Array[x] in countLetters) {
-      countLetters[str1Array[x]]++;
-    } else {
-      countLetters[str1Array[x]] = 1;
-    }
+    // if (str1Array[x] in countLetters) {
+    //   countLetters[str1Array[x]]++;
+    // } else {
+    //   countLetters[str1Array[x]] = 1;
+    // }
+    countLetters[str1Array[x]] = countLetters[str1Array[x]] + 1 || 1;
   }
 
   for (let x = 0; x < str2Array.length; x++) {
-    if (str2Array[x] in countLetters) {
-      countLetters[str2Array[x]]--;
-    } else {
-      countLetters[str2Array[x]] = -1;
-    }
+    // if (str2Array[x] in countLetters) {
+    //   countLetters[str2Array[x]]--;
+    // } else {
+    //   countLetters[str2Array[x]] = -1;
+    // }
+    countLetters[str2Array[x]] = countLetters[str2Array[x]] - 1 || -1;
   }
 
   const countLettersKeys = Object.keys(countLetters);

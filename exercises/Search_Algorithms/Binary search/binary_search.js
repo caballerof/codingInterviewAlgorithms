@@ -1,31 +1,30 @@
 /**
  * Binary search
- * 
- * @param {Array} arr `Array` to in which find the `val`.
- * @param {number} val `Number` to find on the `Array`.
+ *
+ * @param {number[]} nums `Array` to in which find the `val`.
+ * @param {number} target `Number` to find on the `Array`.
+ * * @return {number}
  */
-function binarySearch(arr, val) {
-    if ( arr[0] > val || arr[-1] < val ) return -1;
+var search = function (nums, target) {
+  let left = 0;
+  let right = nums.length - 1;
 
-    let rPointer = arr.length;
-    let lPointer = 0;
-    let mPointer = Math.floor( (lPointer + rPointer) / 2 );
+  if (target > nums[right] || target < nums[left]) return -1;
 
-    while (lPointer <= rPointer) {
-        if (val === arr[mPointer]) {
-            return mPointer;
-        } else if ( val > arr[mPointer] ) {
-            lPointer = mPointer + 1;            
-        } else {
-            rPointer = mPointer - 1;
-        }
+  while (left <= right) {
+    let middle = Math.floor((left + right) / 2);
 
-        mPointer = Math.floor( (lPointer + rPointer) / 2 );
+    if (target === nums[middle]) {
+      return middle;
+    } else if (target > nums[middle]) {
+      left = middle + 1;
+    } else {
+      right = middle - 1;
     }
+  }
 
-    return -1;
-}
-
+  return -1;
+};
 
 const test1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 45, 48, 54];
 

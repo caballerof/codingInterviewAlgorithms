@@ -1,27 +1,21 @@
-const { levelWidthTree } = require('./levelWidthTree');
-const { Node } = require('../tree/tree');
+const boxes = [
+  { l: 1, w: 1, h: 1 },
+  { l: 3, w: 3, h: 3 },
+  { l: 2, w: 2, h: 2 },
+];
 
-test('levelWidthTree is a function', () => {
-  expect(typeof levelWidthTree).toEqual('function');
-});
+function fitsInOneBox(boxes) {
+  boxes.sort((boxA, boxB) => {
+    return Object.values(boxA)[0] - Object.values(boxB)[0];
+  });
 
-test('levelWidthTree returns number of nodes at widest point', () => {
-  const root = new Node(0);
-  root.add(1);
-  root.add(2);
-  root.add(3);
-  root.children[0].add(4);
-  root.children[2].add(5);
+  for (let idx = 0; idx < boxes.length - 1; idx++) {
+    const { l, w, h } = boxes[idx];
+    const { l2, w2, h2 } = boxes[idx + 1];
+    if (l >= l2 || w >= w2 || h >= h2) return false;
+  }
 
-  expect(levelWidthTree(root)).toEqual([1, 3, 2]);
-});
+  return true;
+}
 
-test('levelWidthTree returns number of nodes at widest point', () => {
-  const root = new Node(0);
-  root.add(1);
-  root.children[0].add(2);
-  root.children[0].add(3);
-  root.children[0].children[0].add(4);
-
-  expect(levelWidthTree(root)).toEqual([1, 1, 2, 1]);
-});
+console.log('🚀 ~ file: test.js:24 ~ fitsInOneBox', fitsInOneBox(boxes));

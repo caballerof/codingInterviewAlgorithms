@@ -22,5 +22,8 @@
   "homepage": "https://github.com/caballerof/codingInterviewAlgorithms#readme",
   "dependencies": {
     "jest": "^25.5.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.2.3"
   }
 }
