@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*
  * 1) Create a node class.  The constructor
@@ -31,13 +31,27 @@ class Node {
   }
 
   remove(data) {
-    this.children = this.children.filter(node => node.data !== data);
+    this.children = this.children.filter((node) => node.data !== data);
   }
 } // End class Node
 
 class Tree {
-  constructor() {
-    this.root = null;
+  constructor(root = null) {
+    this.root = root;
+  }
+
+  bfsOp2() {
+    if (!this.root) return [];
+
+    let queue = [this.root];
+
+    for (let x = 0; x < queue.length; x++) {
+      const data = queue[x].data;
+      queue.push(...queue[x].children);
+      queue[x] = data;
+    }
+
+    return queue;
   }
 
   /**
@@ -101,5 +115,5 @@ class Tree {
 
 module.exports = {
   Node,
-  Tree
+  Tree,
 };
