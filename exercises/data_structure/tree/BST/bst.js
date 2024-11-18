@@ -8,16 +8,16 @@ class Node {
   contains(data) {
     // stop condition null or val == data
     console.log('It is: ');
-    if(data === this.data){
+    if (data === this.data) {
       return data;
     }
 
-    if(data < this.data && this.left) {
+    if (data < this.data && this.left) {
       return this.left.contains(data);
-    } else if(data > this.data && this.right) {
+    } else if (data > this.data && this.right) {
       return this.right.contains(data);
-    } 
-    
+    }
+
     return null;
   }
 
@@ -33,25 +33,39 @@ class Node {
     }
   }
 
-  insertRecursive(data) {
+  insertIterative(data) {
     let node = this;
     let previousNode = null;
 
-    while(node) {
+    while (node) {
       previousNode = node;
 
-      if( data < node.data) {
+      if (data < node.data) {
         node = node.left;
-      }else if (data > node.data) {
+      } else if (data > node.data) {
         node = node.right;
       }
     }
 
-    if(data < previousNode.data) {
+    if (data < previousNode.data) {
       previousNode.left = new Node(data);
-    } else if( data > previousNode.data) {
+    } else if (data > previousNode.data) {
       previousNode.right = new Node(data);
     }
+  }
+
+  dfsInOrderRecursive(root, result = []) {
+    const traverse = (node) => {
+      if (!node) return;
+
+      traverse(node.left);
+      result.push(node.data);
+      traverse(node.right);
+    };
+
+    traverse(root);
+
+    return result;
   }
 } // End Node
 

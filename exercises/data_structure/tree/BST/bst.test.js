@@ -1,22 +1,22 @@
-const Node = require("./bst");
+const Node = require('./bst');
 
-test("Node is a constructor", () => {
-  expect(typeof Node.prototype.constructor).toEqual("function");
+test('Node is a constructor', () => {
+  expect(typeof Node.prototype.constructor).toEqual('function');
 });
 
 describe('Insert new node correctly', () => {
   test('Insert recursively', () => {
     const node = new Node(10);
-    node.insertRecursive(5);
-    node.insertRecursive(15);
-    node.insertRecursive(17);
+    node.insertIterative(5);
+    node.insertIterative(15);
+    node.insertIterative(17);
 
     expect(node.left.data).toEqual(5);
     expect(node.right.data).toEqual(15);
     expect(node.right.right.data).toEqual(17);
   });
 
-  test("Node can insert correctly", () => {
+  test('Node can insert correctly', () => {
     const node = new Node(10);
     node.insert(5);
     node.insert(15);
@@ -28,7 +28,7 @@ describe('Insert new node correctly', () => {
   });
 });
 
-test("Contains returns node with the same data", () => {
+test('Contains returns node with the same data', () => {
   const node = new Node(10);
   node.insert(5);
   node.insert(15);
@@ -43,7 +43,7 @@ test("Contains returns node with the same data", () => {
   expect(node.contains(3)).toEqual(3);
 });
 
-test("Contains returns null if value not found", () => {
+test('Contains returns null if value not found', () => {
   const node = new Node(10);
   node.insert(5);
   node.insert(15);

@@ -111,6 +111,32 @@ class Tree {
       fn(node);
     }
   }
+
+  /**
+   * Traverses to the binary search tree in in-order, i. e. it follow the schema of:
+   * Left Node -> Root Node -> Right Node
+   * Using interactive loops.
+   *
+   * @returns Array with the values of each node in in-order.
+   */
+  dfsInOrderIterative(root) {
+    const stack = [];
+    const result = [];
+    let current = root;
+
+    while (stack.length > 0 || current) {
+      if (current) {
+        stack.push(current);
+        current = current.children[0];
+      } else {
+        current = stack.pop();
+        result.push(current.data);
+        current = current.children[1];
+      }
+    }
+
+    return result;
+  }
 } // End class Tree
 
 module.exports = {
